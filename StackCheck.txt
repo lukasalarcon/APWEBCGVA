@@ -1,0 +1,207 @@
+WCG Health Check script - Version 1
+
+WCG installation directory = /opt/WCG
+
+Policy Server IP as listed in websense.ini = 10.10.0.131
+Policy Server Port as listed in websense.ini = 55806
+
+Policy Server IP as listed in records.config = 10.10.0.131
+Policy Server Port as listed in records.config = 55806
+
+Filtering Service IP = 10.10.0.131
+Filtering Service Port = 15868
+
+Database Download Server IP = 
+
+Checking for active network interfaces...
+Interface eth1:
+Settings for eth1:
+	Supported ports: [ TP ]
+	Supported link modes:   10baseT/Half 10baseT/Full 
+	                        100baseT/Half 100baseT/Full 
+	                        1000baseT/Full 
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Advertised link modes:  10baseT/Half 10baseT/Full 
+	                        100baseT/Half 100baseT/Full 
+	                        1000baseT/Full 
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Speed: 1000Mb/s
+	Duplex: Full
+	Port: Twisted Pair
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: on
+	MDI-X: Unknown
+	Supports Wake-on: d
+	Wake-on: d
+	Current message level: 0x00000007 (7)
+			       drv probe link
+	Link detected: no
+
+Features for eth1:
+rx-checksumming: on
+tx-checksumming: on
+scatter-gather: on
+tcp-segmentation-offload: on
+udp-fragmentation-offload: off
+generic-segmentation-offload: on
+generic-receive-offload: off
+large-receive-offload: off
+rx-vlan-offload: on
+tx-vlan-offload: on
+ntuple-filters: off
+receive-hashing: off
+
+WARNING!  scatter-gather is on.
+
+
+eth1      Link encap:Ethernet  HWaddr 00:0C:29:32:E6:5F  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+
+Interface eth0:
+Settings for eth0:
+	Current message level: 0x00000007 (7)
+			       drv probe link
+	Link detected: yes
+
+Features for eth0:
+rx-checksumming: off
+tx-checksumming: off
+scatter-gather: off
+tcp-segmentation-offload: off
+udp-fragmentation-offload: off
+generic-segmentation-offload: off
+generic-receive-offload: off
+large-receive-offload: off
+rx-vlan-offload: off
+tx-vlan-offload: off
+ntuple-filters: off
+receive-hashing: off
+
+eth0      Link encap:Ethernet  HWaddr 00:0C:29:32:E6:69  
+          inet addr:10.10.0.131  Bcast:10.10.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fe32:e669/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:133 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:39 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:12340 (12.0 KiB)  TX bytes:3100 (3.0 KiB)
+          Interrupt:16 Base address:0x2000 
+
+
+Checking for routing cache overflow errors in /var/log/messages...
+Checking for ARP cache overflow errors in /var/log/messages...
+
+Testing connectivity to DNS name servers listed in /etc/resolv.conf...
+search cobre.lab
+nameserver 208.67.222.222
+
+Connection to 208.67.222.222 53 port [udp/*] succeeded!
+
+HOSTNAME = app.cobre.lab
+
+/opt/WCG/bin/content_line -r proxy.node.hostname
+app
+
+The system hostname app.cobre.lab and the WCG hostname app do not match!
+
+
+Pinging hostname - should NOT resolve to the loopback (127.0.0.1) address...
+PING app.cobre.lab (10.10.0.131) 56(84) bytes of data.
+64 bytes from app.cobre.lab (10.10.0.131): icmp_seq=1 ttl=64 time=0.030 ms
+
+--- app.cobre.lab ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.030/0.030/0.030/0.000 ms
+
+Testing Filtering Server connectivity configured in /opt/WCG/bin/config/records.config...
+Connection to 10.10.0.131 15868 port [tcp/*] succeeded!
+Connection to 10.10.0.131 55807 port [tcp/*] succeeded!
+
+Testing Policy Server connectivity configured in /opt/WCG/bin/config/records.config...
+Connection to 10.10.0.131 55806 port [tcp/*] succeeded!
+
+Testing gateway connectivity as listed in the kernel routing table...
+PING 10.10.0.2 (10.10.0.2) 56(84) bytes of data.
+
+--- 10.10.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.102/0.102/0.102/0.000 ms
+
+Testing connectivity to www.websense.com
+Connection to www.websense.com 80 port [tcp/http] succeeded!
+
+Testing to see which WCG processes are running...
+root      1854     1  0 08:40 ?        00:00:00 ./content_cop
+root      1890  1854  0 08:40 ?        00:00:00 logger -p syslog.err -t content_cop
+root      2036  1854  4 08:40 ?        00:00:04 bin/content_manager
+root      2192  2036 18 08:40 ?        00:00:14 bin/content_gateway -M -A27:S
+
+WCG is configured to listen for HTTP proxy traffic on port 8080
+WCG is configured to listen for HTTPS proxy traffic on port 
+
+Testing to see if content_manager is listening on the HTTP port 8080...
+tcp        0      0 0.0.0.0:8080                0.0.0.0:*                   LISTEN      2036/bin/content_ma 
+
+
+Testing to see if WCG is configured to always send HTTP/1.1 requests...
+
+Testing to see if WCG is configured with chunked transfer encoding disabled...
+
+Checking to see which version Linux kernel is running...
+2.6.32-358.el6.x86_64
+
+Testing to see if ARM (transparent proxying) is enabled...
+
+ARM is enabled.  Checking to see if the ARM module is loaded...
+ARM module armlkm is loaded.
+
+Checking to see if there are any indications of WCG resets or crashes...
+
+http_proxy = app.cobre.lab:8080
+https_proxy = app.cobre.lab:
+
+Testing HTTP web request through app.cobre.lab:8080. Should see 200 OK
+
+Testing HTTPS web request through app.cobre.lab:. Should see 200 OK
+
+Testing adult material category web request through app.cobre.lab:8080.  Should see 302 Redirect to 10.10.0.131.
+
+Testing real time malicious category web request through app.cobre.lab:8080. Should see 302 Redirect to 10.10.0.131.
+
+Testing random web request through app.cobre.lab:8080. Should see 200 OK
+
+
+
+Health check test results...
+
+Test to verify the policy server IPs in records.config and websense.ini match...	PASSED.
+Test to verify the policy server ports in records.config and websense.ini match...	PASSED.
+Test to verify scatter-gather is off...							FAILED.
+	ACTION: It is recommended that scatter-gather be turned off for all interfaces WCG is using.
+	        Use ethtool -K to turn scatter-gather off on the appropriate interfaces.
+
+Test to look for routing cache errors...						PASSED.
+Test to look for ARP cache errors...							PASSED.
+Test to verify DNS server connectivity...						PASSED.
+Test to verify hostname is configured properly in the hosts file...			PASSED.
+Test to verify connectivity with the policy server...					PASSED.
+Test to verify connectivity with the filtering server...				PASSED.
+Test to verify connectivity with the gateways listed in the routing table...		PASSED.
+Test to verify content_gateway is running...						PASSED.
+Test to verify content_manager is running...						PASSED.
+Test to verify content_manager is listening on the HTTP port 8080...			PASSED.
+Test to verify content_gateway is always sending HTTP/1.1 requests...			PASSED.
+Test to verify content_gateway has chunked transfer encoding disabled...		PASSED.
+Test to verify the required kernel version is running...				PASSED.
+Test to verify ARM is enabled...							PASSED.
+Test to verify the arm module is loaded...						PASSED.
+Test to find indications of WCG crashes or resets...					PASSED.
+
