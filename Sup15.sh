@@ -1,7 +1,9 @@
 #!/bin/bash
 #set -x
 
-SHOME="/home/admin"
+SHOME="/root/scripts"
+WCGINSTALLER=""
+WWSINSTALLER="WebsenseWeb801Setup_Lnx.tar.gz"
 
 change_eth0 ()
 {
