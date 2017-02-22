@@ -98,28 +98,18 @@ class O365:
 				i = i + 1
 			return IPv4		
 
-		def AppendFile(self,theFile,theText):
-
-                        try:
-			 	fo = open(theFile, "a")
-			except ExceptionI: 
-				print "Failed to Open File"
-
-                        fo.write(theText)
-                        fo.close()
-
 
 		def CreateUserAgentO365(self,XML):
 			
 			IPv4 = {}
-			self.theText = ""
-			self.myline = ""
+			theText = ""
+			myline = ""
 			IPv4 = self.CreateIPv4List(XML)
 			i = 0
 			for elem in IPv4:
-				self.myline = 'dest_domain=. user_agent="' + IPv4[i] +'" action=allow\n'
+				self.myline = "dest_domain=. user_agent=\"" + IPv4[i] +"\\" action=allow\n"
                         	self.theText = self.theText + self.myline
-                        	self.AppendFile(os.getcwd() + '\\' + "filter-default.config.tw",self.theText)
+                        	self.AppendFile(self.home + '\\' + "filter-default.config.tw",self.theText)
 				i = i + 1
 
 
@@ -170,7 +160,7 @@ class Tweak:
         				print "Generating O365 PAC Exceptions"
     				if myinput == "6":
         				print "Thanks for using Tweak Project"
-        				exit()
+        				exit
 			
 
 
