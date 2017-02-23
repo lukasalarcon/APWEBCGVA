@@ -5,6 +5,7 @@
 import xml.sax
 import os
 import shutil
+import time
 from urllib2 import Request, urlopen, URLError, HTTPError
 from xml.dom.minidom import parse
 import xml.dom.minidom
@@ -73,7 +74,7 @@ class O365:
     				print "Reading File Buffer"
 			    	bufferlc =  response.read()
 				
-			if self.SaveFile(bufferlc): 
+			if self.SaveFile(bufferlc,"o365.xml"): 
 				#Total Success in Reading and saving File
 				return 1
 			else:
@@ -144,12 +145,15 @@ class O365:
 			self.myline = ""
 			IPv4 = self.CreateIPv4List(XML)
 			i = 0
+			self.theText = "#:.START\n"	
+			self.theText = self.theText + "#:." + time.asctime( time.localtime(time.time()) ) +"\n"
 			for elem in IPv4:
 				self.myline = 'dest_domain=. user_agent="' + IPv4[i] +'" action=allow\n'
                         	self.theText = self.theText + self.myline
-				print self.theText
-                        	self.AppendFile(os.getcwd() + '/' + "filter-default.config.tw",self.theText)
 				i = i + 1
+			#print self.theText
+			self.theText = self.theText + "#:.END\n" 
+                       	self.AppendFile(os.getcwd() + '/' + "filter-default.config.tw",self.theText)
 
 		def GetXMLFile(self):
 		
@@ -160,9 +164,62 @@ class O365:
 			#Wait for Success in Reading XML
 			self.ret = self.ReadXML(self.URL)		
 			if self.ret == 1:
-				CreateUserAgent(self.lcFileName)			
+				self.CreateUserAgentO365(self.lcFileName)			
 			else:
 				print "Couldn't get the Microsoft File. Aborting Operation"
+
+		def DeleteOldLines(self,ConfigFile):
+			self.del_line = 0	
+			self.start_line = 0
+			self.end_line = 0
+			self.counter = 0
+			
+			self.PrintFile("Reading Old Config File:" + ConfigFile)	
+			
+			with open(ConfigFile,"r") as textobj:
+				self.list = list(textobj)
+				#print self.list
+
+
+			for line in self.list:
+				#print line
+				self.start_line = self.start_line + 1
+				if line == "#:.START\n":
+					self.start_line = self.counter
+					self.PrintFile("Detecting START line at:" + str(self.start_line))
+
+				if line == "#:.END\n":
+                                       self.end_line = self.counter
+				       self.PrintFile("Detecting END line at:" + str(self.end_line))
+				       break 
+				self.counter = self.counter + 1 
+	
+			while self.start_line < self.end_line:
+				self.PrintFile("Removing line at:" + str(self.start_line))
+				del list[self.start_line - 1]
+				self.start_line = self.start_line + 1
+
+			
+			self.PrintFile("Saving File with excluded lines:" + ConfigFile)
+			with open(ConfigFile,"w") as textobj:
+				for n in self.list:
+					textobj.write(n)			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Tweak:
 
@@ -198,6 +255,7 @@ class Tweak:
         			        self.CreateUserAgents()	
 				if myinput == "2":
 					print "Generating O365 User-Agent Exceptions"
+					O365t.DeleteOldLines("filter-default.config.tw")
 					O365t.GetXMLFile()
     				if myinput == "3":
         				print "Modifying Performance Values"
@@ -326,7 +384,6 @@ print "Starting: Tweak Project\n"
 print "Under AS-IS Agreement\n"
 
 print "Strong suggest to be an Qualified Forcepoint Personal\n"
-url = "http://support.content.office.net/en-us/static/O365IPAddresses.xml"
 O365t = O365("")	
 #val = O365t.ReadXML(url)
 #O365t.PrintFile(val)
