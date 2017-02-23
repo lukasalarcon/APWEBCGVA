@@ -35,26 +35,52 @@ class O365:
 
 		def SaveFile(self,toSave,newName):
 			# Open a file
-			fo = open(newName, "wb")
-			fo.write(toSave);
+			try:
+				fo = open(newName, "wb")
+			except IOFile as e:
+				self.PrintFile("Error open File toRead" + e.code + e.reason)
+				return 0
+			try:		
+				fo.write(toSave);
+			except IOFile as e:
+				self.PrintFile("Error wrinting file" + e.code + e.reason)
+				return 0
 	
-			# Close opend file
-			fo.close()
+			try:
+				# Close opend file
+				fo.close()
+			except IOFIle as e:
+				self.PrintFile("Error Closing File" + e.code + e.reason)
 
+			#Total success to Save File
+			return 1
+ 
 
 		def ReadXML(self, URL):
 			req = Request(URL)
+			bufferlc = ""
 			try:
     				response = urlopen(req)
 			except HTTPError as e:
     				print 'The server couldn\'t fulfill the request'
     				print 'Error code: ', e.code
+				return 0
 			except URLError as e:
     				print 'We failed to reach a server.'
     				print 'Reason: ', e.reason
+				return 0
 			else:
-    				print "Leyendo Archivo..."	
-			    	return response.read()
+    				print "Reading File Buffer"
+			    	bufferlc =  response.read()
+				
+			if self.SaveFile(bufferlc): 
+				#Total Success in Reading and saving File
+				return 1
+			else:
+				return 0
+
+
+
 	
 		def ParseO365Names(self, XML):
 			DOMTree = xml.dom.minidom.parse(XML)
@@ -99,12 +125,14 @@ class O365:
 			return IPv4		
 
 		def AppendFile(self,theFile,theText):
-
+			print "Append FIle...!"
                         try:
+				print theFile
 			 	fo = open(theFile, "a")
+
 			except ExceptionI: 
 				print "Failed to Open File"
-
+				print self.theText
                         fo.write(theText)
                         fo.close()
 
@@ -119,11 +147,22 @@ class O365:
 			for elem in IPv4:
 				self.myline = 'dest_domain=. user_agent="' + IPv4[i] +'" action=allow\n'
                         	self.theText = self.theText + self.myline
-                        	self.AppendFile(os.getcwd() + '\\' + "filter-default.config.tw",self.theText)
+				print self.theText
+                        	self.AppendFile(os.getcwd() + '/' + "filter-default.config.tw",self.theText)
 				i = i + 1
 
+		def GetXMLFile(self):
+		
+			self.URL = "http://support.content.office.net/en-us/static/O365IPAddresses.xml" 
+			self.ret = 0
+			self.lcFileName = "o365.xml"
 
-
+			#Wait for Success in Reading XML
+			self.ret = self.ReadXML(self.URL)		
+			if self.ret == 1:
+				CreateUserAgent(self.lcFileName)			
+			else:
+				print "Couldn't get the Microsoft File. Aborting Operation"
 
 class Tweak:
 
@@ -159,7 +198,7 @@ class Tweak:
         			        self.CreateUserAgents()	
 				if myinput == "2":
 					print "Generating O365 User-Agent Exceptions"
-					O365t.CreateUserAgentO365("o365.xml")
+					O365t.GetXMLFile()
     				if myinput == "3":
         				print "Modifying Performance Values"
         			        self.Perfo()	
@@ -191,8 +230,8 @@ class Tweak:
 
 			for agent in root.findall("./agents/useragent"):
 			        print agent.text 
-				myline = "dest_domain=. user_agent=\"" + agent.text +"\" action=allow\n"
-				self.theText = self.theText + myline  
+				self.myline = "dest_domain=. user_agent=\"" + agent.text +"\" action=allow\n"
+				self.theText = self.theText + self.myline  
 			self.AppendFile(self.home + '\\' + "filter-default.config.tw",self.theText)	
 
 
