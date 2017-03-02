@@ -154,13 +154,13 @@ class O365:
 			self.theText = ""
 			self.myline = ""
 			IPv4 = self.CreateIPv4List(XML)
-			i = 0
+			self.i = 0
 			self.theText = "#:.START\n"	
 			self.theText = self.theText + "#:." + time.asctime( time.localtime(time.time()) ) +"\n"
 			for elem in IPv4:
-				self.myline = 'dest_ip=' + IPv4[i] + ' user_agent=' + ' action=allow\n'
+				self.myline = 'dest_ip=' + IPv4[self.i] + ' user_agent=' + ' action=allow\n'
                         	self.theText = self.theText + self.myline
-				i = i + 1
+				self.i = self.i + 1
 			#print self.theText
 			self.theText = self.theText + "#:. " + time.asctime( time.localtime(time.time()) )+ "\n"
 			self.theText = self.theText + "#:.END\n" 
@@ -180,13 +180,12 @@ class O365:
 				print "Couldn't get the Microsoft File. Aborting Operation"
 
 			self.FilterConfig = self.CreateUserAgentO365(XML)
+
+			if not self.DeleteOldLines(ConfigFile):
+                                        return 0
 			
 			if not self.AppendFile(os.getcwd() + '/' + ConfigFile,self.theText):
 					return 0
-
-			if not self.DeleteOldLines(ConfigFile):
-					return 0
-
 
 			return 1
 
@@ -227,6 +226,7 @@ class O365:
 					self.PrintFile("Detecting START in old file line at: " + str(self.start_line))
 					
 				if self.found == 1:
+					print "Deleting " + self.list[self.counter]	
 					del self.list[self.counter]
 
 
@@ -240,10 +240,13 @@ class O365:
 
 
 			try:
-				self.PrintFile("Saving File with excluded lines:" + ConfigFile)
-				with open(ConfigFile,"w") as textobj:
-					for n in self.list:
-						textobj.write(n)			
+
+				if self.found == 1:
+					self.PrintFile("Saving File with excluded lines:" + ConfigFile)
+					with open(ConfigFile,"w") as WriteFile:
+						for n in self.list:
+							print "IMPRIMIENDO " + n
+							WriteFile.write(n)			
 			except IOFile as e:
 				self.PrintFile("Can't close " + ConfigFile + " " + e.reason)
 				return 0
