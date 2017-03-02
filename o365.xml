@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<products updated="3/1/2017">
+<products updated="3/2/2017">
   <product name="WAC">
     <addresslist type="IPv6">
       <address>2603:1020:201::37</address>
@@ -348,8 +348,8 @@
       <address>2603:1047::/48</address>
       <address>2603:1057::/48</address>
       <address>2620:1ec:6::/48</address>
-      <address>2a01:111:202f::/48</address>
       <address>2620:1ec:40::/42</address>
+      <address>2a01:111:202f::/48</address>
     </addresslist>
     <addresslist type="URL">
       <address>*.dc.trouter.io</address>
@@ -362,6 +362,7 @@
       <address>*.feedback.skype.com</address>
       <address>*.giphy.com</address>
       <address>*.licensing.mp.microsoft.com</address>
+      <address>*.lync.com</address>
       <address>*.msedge.net</address>
       <address>*.msg.skype.com</address>
       <address>*.pipe.aria.microsoft.com</address>
@@ -371,12 +372,10 @@
       <address>*.teams.skype.com</address>
       <address>*.teams.microsoft.com</address>
       <address>*.trouter.io</address>
-      <address>api.teams.skype.com/amer</address>
-      <address>api.teams.skype.com/apac</address>
-      <address>api.teams.skype.com/emea</address>
-      <address>img.teams.skype.com/amer</address>
-      <address>img.teams.skype.com/apac</address>
-      <address>img.teams.skype.com/emea</address>
+      <address>config.edge.skype.com</address>
+      <address>graph.skype.com</address>
+      <address>latest-swx.cdn.skype.com</address>
+      <address>mlccdnprod.azureedge.net</address>
       <address>prod.registrar.skype.com</address>
       <address>prod.tpc.skype.com</address>
       <address>s-0001.s-msedge.net</address>
@@ -384,7 +383,10 @@
       <address>scsquery-ss-asia.trafficmanager.net</address>
       <address>scsquery-ss-eu.trafficmanager.net</address>
       <address>scsquery-ss-us.trafficmanager.net</address>
+      <address>skypemaprdsitus.trafficmanager.net</address>
+      <address>swx.cdn.skype.com</address>
       <address>teams.microsoft.com</address>
+      <address>teams.skype.com</address>
     </addresslist>
     <addresslist type="IPv4">
       <address>13.67.56.225/32</address>
@@ -832,13 +834,8 @@
   </product>
   <product name="LYO">
     <addresslist type="IPv6">
-      <address>2603:1027::/48</address>
-      <address>2603:1037::/48</address>
-      <address>2603:1047::/48</address>
-      <address>2603:1057::/48</address>
       <address>2620:01ec:0042::/48</address>
       <address>2620:1ec:40::/42</address>
-      <address>2620:1ec:6::/48</address>
       <address>2a01:111:2047:2::/64</address>
       <address>2a01:111:2047:1::/64</address>
       <address>2a01:111:2048:2::/64</address>
@@ -902,12 +899,6 @@
       <address>2a01:111:f406:2401::/64</address>
       <address>2a01:111:f406:402::/64</address>
       <address>2a01:111:f406:403::/64</address>
-      <address>2603:1027::/48</address>
-      <address>2603:1037::/48</address>
-      <address>2603:1047::/48</address>
-      <address>2603:1057::/48</address>
-      <address>2a01:111:202f::/48</address>
-      <address>2620:1ec:40::/42</address>
     </addresslist>
     <addresslist type="IPv4">
       <address>13.67.56.225/32</address>
@@ -1132,30 +1123,6 @@
       <address>207.46.155.141/32</address>
       <address>207.46.156.136/32</address>
       <address>207.46.230.50/32</address>
-      <address>13.70.156.147/32</address>
-      <address>13.70.159.107/32</address>
-      <address>13.73.109.13/32</address>
-      <address>13.73.155.42/32</address>
-      <address>13.75.125.228/32</address>
-      <address>13.77.7.84/32</address>
-      <address>23.99.213.58/32</address>
-      <address>23.101.115.193/32</address>
-      <address>23.101.116.26/32</address>
-      <address>23.101.156.198/32</address>
-      <address>23.101.158.111/32</address>
-      <address>23.102.17.214/32</address>
-      <address>23.102.24.114/32</address>
-      <address>40.68.229.156/32</address>
-      <address>40.68.230.133/32</address>
-      <address>40.78.145.194/32</address>
-      <address>52.112.0.0/14</address>
-      <address>52.169.9.241/32</address>
-      <address>52.174.186.47/32</address>
-      <address>52.178.179.194/32</address>
-      <address>104.40.91.215/32</address>
-      <address>104.44.200.0/23</address>
-      <address>104.45.231.95/32</address>
-      <address>13.107.64.0/18</address>
     </addresslist>
     <addresslist type="URL">
       <address>*.api.skype.com</address>
@@ -1166,6 +1133,7 @@
       <address>*.lync.com</address>
       <address>*.microsoftonline.com</address>
       <address>*.msecnd.net</address>
+      <address>*.pipe.aria.microsoft.com</address>
       <address>*.sfbassets.com</address>
       <address>*.skypeforbusiness.com</address>
       <address>*.streaming.mediaservices.windows.net</address>
@@ -1179,49 +1147,19 @@
       <address>broadcast.skype.com</address>
       <address>browser.pipe.aria.microsoft.com</address>
       <address>config.edge.skype.com</address>
+      <address>ev-secure.verisign.com</address>
       <address>evsecure-ocsp.verisign.com</address>
       <address>evsecure-aia.verisign.com</address>
       <address>evsecure-crl.verisign.com</address>
       <address>graph.skype.com</address>
       <address>mlccdn.blob.core.windows.net</address>
+      <address>mlccdnprod.azureedge.net</address>
       <address>ocsp.msocsp.com</address>
       <address>pipe.skype.com</address>
       <address>quicktips.skypeforbusiness.com</address>
       <address>sa.symcb.com</address>
       <address>skypemaprdsitus.trafficmanager.net</address>
       <address>swx.cdn.skype.com</address>
-      <address>*.dc.trouter.io</address>
-      <address>*.conv.skype.com</address>
-      <address>*.asm.skype.com</address>
-      <address>*.cc.skype.com</address>
-      <address>*.config.skype.com</address>
-      <address>*.giphy.com</address>
-      <address>*.msedge.net</address>
-      <address>*.msg.skype.com</address>
-      <address>*.pipe.aria.microsoft.com</address>
-      <address>*.pipe.skype.com</address>
-      <address>api.teams.skype.com/amer</address>
-      <address>api.teams.skype.com/apac</address>
-      <address>api.teams.skype.com/emea</address>
-      <address>img.teams.skype.com/amer</address>
-      <address>img.teams.skype.com/apac</address>
-      <address>img.teams.skype.com/emea</address>
-      <address>mlccdnprod.azureedge.net</address>
-      <address>prod.registrar.skype.com</address>
-      <address>prod.tpc.skype.com</address>
-      <address>s-0001.s-msedge.net</address>
-      <address>s-0004.s-msedge.net</address>
-      <address>scsquery-ss-asia.trafficmanager.net</address>
-      <address>scsquery-ss-eu.trafficmanager.net</address>
-      <address>scsquery-ss-us.trafficmanager.net</address>
-      <address>teams.microsoft.com</address>
-      <address>*.teams.skype.com</address>
-      <address>*.teams.microsoft.com</address>
-      <address>*.sfbassets.com</address>
-      <address>*.skypeforbusiness.com</address>
-      <address>*.pipe.aria.microsoft.com</address>
-      <address>*.asm.skype.com</address>
-      <address>*.msg.skype.com</address>
     </addresslist>
   </product>
   <product name="Identity">

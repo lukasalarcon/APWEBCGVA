@@ -158,10 +158,11 @@ class O365:
 			self.theText = "#:.START\n"	
 			self.theText = self.theText + "#:." + time.asctime( time.localtime(time.time()) ) +"\n"
 			for elem in IPv4:
-				self.myline = 'dest_ip=. user_agent="' + IPv4[i] +'" action=allow\n'
+				self.myline = 'dest_ip=' + IPv4[i] + ' user_agent=' + ' action=allow\n'
                         	self.theText = self.theText + self.myline
 				i = i + 1
 			#print self.theText
+			self.theText = self.theText + "#:. " + time.asctime( time.localtime(time.time()) )+ "\n"
 			self.theText = self.theText + "#:.END\n" 
 			
 			return self.theText
@@ -183,7 +184,7 @@ class O365:
 			if not self.AppendFile(os.getcwd() + '/' + ConfigFile,self.theText):
 					return 0
 
-			if not self.DeleteOldLines():
+			if not self.DeleteOldLines(ConfigFile):
 					return 0
 
 
@@ -206,6 +207,7 @@ class O365:
 			self.start_line = 0
 			self.end_line = 0
 			self.counter = 0
+			self.found = 0
 			
 			self.PrintFile("Reading Old Config File:" + ConfigFile)	
 			
@@ -221,18 +223,21 @@ class O365:
 				#print line
 				if line == "#:.START\n":
 					self.start_line = self.counter
-					self.PrintFile("Detecting START line at:" + str(self.start_line))
+					self.found = 1
+					self.PrintFile("Detecting START in old file line at: " + str(self.start_line))
+					
+				if self.found == 1:
+					del self.list[self.counter]
+
 
 				if line == "#:.END\n":
                                        self.end_line = self.counter
-				       self.PrintFile("Detecting END line at:" + str(self.end_line))
+				       self.PrintFile("Detecting END line at: " + str(self.end_line))
 				       break 
-				self.counter = self.counter + 1 
-	
-			while self.start_line < self.end_line:
-				self.PrintFile("Removing line at:" + str(self.start_line) + "while END:" + str(self.end_line) )
-				del self.list[self.start_line - 1]
-				self.start_line = self.start_line + 1
+				self.counter = self.counter + 1
+			
+			self.PrintFile("Detecting LENGHT: " + str(len(self.list)))
+
 
 			try:
 				self.PrintFile("Saving File with excluded lines:" + ConfigFile)
