@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<products updated="2/11/2017">
+<products updated="3/1/2017">
   <product name="WAC">
     <addresslist type="IPv6">
       <address>2603:1020:201::37</address>
@@ -191,97 +191,15 @@
       <address>clientlog.portal.office.com</address>
     </addresslist>
   </product>
-  <product name="Yammer">
-    <addresslist type="IPv6">
-      <address>2620:1ec:a92::158</address>
-      <address>2620:1ec:4::158</address>
-      <address>2620:1ec:a92::159</address>
-      <address>2620:1ec:4::159</address>
-    </addresslist>
-    <addresslist type="IPv4">
-      <address>13.107.6.158/31</address>
-      <address>13.107.9.158/31</address>
-      <address>134.170.148.0/22</address>
-    </addresslist>
-    <addresslist type="URL">
-      <address>*.assets-yammer.com</address>
-      <address>ajax.googleapis.com</address>
-      <address>*.cloudfront.net</address>
-      <address>*.yammer.com</address>
-      <address>*.yammerusercontent.com</address>
-    </addresslist>
-  </product>
-  <product name="OfficeMobile">
-    <addresslist type="URL">
-      <address>office15client.microsoft.com</address>
-      <address>odc.officeapps.live.com</address>
-      <address>go.microsoft.com</address>
-      <address>login.microsoftonline.com</address>
-      <address>odcsm.officeapps.live.com</address>
-      <address>*-my.sharepoint.com</address>
-      <address>ms.tific.com</address>
-      <address>roaming.officeapps.live.com</address>
-      <address>o15.officeredir.microsoft.com</address>
-      <address>office.microsoft.com</address>
-      <address>officeimg.vo.msecnd.net</address>
-      <address>m.webtrends.com</address>
-      <address>d.docs.live.net</address>
-      <address>login.live.com</address>
-      <address>auth.gfx.ms</address>
-      <address>wer.microsoft.com</address>
-      <address>*.appex.bing.com</address>
-      <address>*.appex-rf.msn.com</address>
-      <address>appexsin.stb.s-msn.com</address>
-      <address>*.acompli.net</address>
-      <address>outlook.office365.com</address>
-      <address>sdfpilot.outlook.com</address>
-      <address>graph.windows.net</address>
-      <address>api.office.com</address>
-      <address>secure.aadcdn.microsoftonline-p.com</address>
-      <address>login.windows.net</address>
-      <address>login.windows-ppe.net</address>
-      <address>com.microsoft.office.outlook.dev</address>
-      <address>go.microsoft.com</address>
-      <address>mam.manage.microsoft.com</address>
-      <address>vortex.data.microsoft.com</address>
-      <address>login.microsoftonline.com</address>
-      <address>outlook.office.com</address>
-      <address>login.windows.net</address>
-      <address>login.live.com</address>
-      <address>auth.gfx.ms</address>
-      <address>account.live.com</address>
-      <address>graph.microsoft.com</address>
-      <address>apis.live.net</address>
-      <address>accounts.google.com</address>
-      <address>mail.google.com</address>
-      <address>www.googleapis.com</address>
-      <address>api.login.yahoo.com</address>
-      <address>social.yahooapis.com</address>
-      <address>www.dropbox.com</address>
-      <address>api.dropboxapi.com</address>
-      <address>app.box.com</address>
-      <address>m.facebook.com</address>
-      <address>graph.facebook.com</address>
-      <address>www.evernote.com</address>
-      <address>www.wunderlist.com</address>
-      <address>a.wunderlist.com</address>
-      <address>bit.ly/outlookprivacy</address>
-      <address>www.acompli.com/privacy-policy</address>
-      <address>by.uservoice.com</address>
-      <address>outlook.uservoice.com</address>
-      <address>api.diagnostics.office.com</address>
-      <address>acompli-android-logs.s3.amazonaws.com</address>
-      <address>s3-us-west-2.amazonaws.com</address>
-      <address>mobile.pipe.aria.microsoft.com</address>
-      <address>data.flurry.com</address>
-      <address>app.adjust.com</address>
-      <address>rink.hockeyapp.net</address>
-      <address>sdk.hockeyapp.net</address>
-      <address>acompli.helpshift.com</address>
-      <address>play.google.com</address>
-    </addresslist>
+  <product name="EX-Fed">
+    <addresslist type="IPv6" />
+    <addresslist type="IPv4" />
   </product>
   <product name="ProPlus">
+    <addresslist type="IPv6">
+      <address>2a01:111:2003::51</address>
+      <address>2620:1ec:5::51</address>
+    </addresslist>
     <addresslist type="URL">
       <address>activation.sls.microsoft.com</address>
       <address>c.bing.net</address>
@@ -402,52 +320,212 @@
       <address>191.236.157.212/32</address>
       <address>207.46.237.84/32</address>
     </addresslist>
+  </product>
+  <product name="Yammer">
     <addresslist type="IPv6">
-      <address>2a01:111:2003::51</address>
-      <address>2620:1ec:5::51</address>
+      <address>2620:1ec:a92::158</address>
+      <address>2620:1ec:4::158</address>
+      <address>2620:1ec:a92::159</address>
+      <address>2620:1ec:4::159</address>
     </addresslist>
-  </product>
-  <product name="EX-Fed">
-    <addresslist type="IPv6" />
-    <addresslist type="IPv4" />
-  </product>
-  <product name="RCA">
     <addresslist type="IPv4">
-      <address>13.67.59.89/32</address>
-      <address>40.85.91.8/32</address>
-      <address>104.208.36.70/32</address>
-      <address>104.211.54.99/32</address>
-      <address>104.211.54.134/32</address>
-    </addresslist>
-  </product>
-  <product name="OneNote">
-    <addresslist type="IPv4">
-      <address>13.73.106.160/32</address>
-      <address>13.75.158.234/32</address>
-      <address>13.78.58.132/32</address>
-      <address>13.79.161.29/32</address>
-      <address>13.82.54.72/32</address>
-      <address>13.93.219.105/32</address>
-      <address>40.74.129.10/32</address>
-      <address>40.118.97.54/32</address>
-      <address>52.172.158.178/32</address>
-      <address>104.41.35.170/32</address>
-      <address>104.211.163.139/32</address>
+      <address>13.107.6.158/31</address>
+      <address>13.107.9.158/31</address>
+      <address>134.170.148.0/22</address>
     </addresslist>
     <addresslist type="URL">
-      <address>*.onenote.com</address>
-      <address>*.msecnd.net</address>
-      <address>*.microsoft.com</address>
-      <address>*.office.net</address>
-      <address>apis.live.net</address>
-      <address>www.onedrive.com</address>
-      <address>www.onenote.com</address>
-      <address>Cdn.optimizely.com</address>
-      <address>Ajax.aspnetcdn.com</address>
-      <address>s.ytimg.com</address>
-      <address>www.youtube.com</address>
-      <address>ad.atdmt.com</address>
-      <address>Cdn.onenote.net</address>
+      <address>*.assets-yammer.com</address>
+      <address>ajax.googleapis.com</address>
+      <address>*.cloudfront.net</address>
+      <address>*.yammer.com</address>
+      <address>*.yammerusercontent.com</address>
+    </addresslist>
+  </product>
+  <product name="Teams">
+    <addresslist type="IPv6">
+      <address>2603:1027::/48</address>
+      <address>2603:1037::/48</address>
+      <address>2603:1047::/48</address>
+      <address>2603:1057::/48</address>
+      <address>2620:1ec:6::/48</address>
+      <address>2a01:111:202f::/48</address>
+      <address>2620:1ec:40::/42</address>
+    </addresslist>
+    <addresslist type="URL">
+      <address>*.dc.trouter.io</address>
+      <address>*.conv.skype.com</address>
+      <address>*.cqd.lync.com</address>
+      <address>*.asm.skype.com</address>
+      <address>*.blob.core.windows.net</address>
+      <address>*.cc.skype.com</address>
+      <address>*.config.skype.com</address>
+      <address>*.feedback.skype.com</address>
+      <address>*.giphy.com</address>
+      <address>*.licensing.mp.microsoft.com</address>
+      <address>*.msedge.net</address>
+      <address>*.msg.skype.com</address>
+      <address>*.pipe.aria.microsoft.com</address>
+      <address>*.pipe.skype.com</address>
+      <address>*.sfbassets.com</address>
+      <address>*.skypeforbusiness.com</address>
+      <address>*.teams.skype.com</address>
+      <address>*.teams.microsoft.com</address>
+      <address>*.trouter.io</address>
+      <address>api.teams.skype.com/amer</address>
+      <address>api.teams.skype.com/apac</address>
+      <address>api.teams.skype.com/emea</address>
+      <address>img.teams.skype.com/amer</address>
+      <address>img.teams.skype.com/apac</address>
+      <address>img.teams.skype.com/emea</address>
+      <address>prod.registrar.skype.com</address>
+      <address>prod.tpc.skype.com</address>
+      <address>s-0001.s-msedge.net</address>
+      <address>s-0004.s-msedge.net</address>
+      <address>scsquery-ss-asia.trafficmanager.net</address>
+      <address>scsquery-ss-eu.trafficmanager.net</address>
+      <address>scsquery-ss-us.trafficmanager.net</address>
+      <address>teams.microsoft.com</address>
+    </addresslist>
+    <addresslist type="IPv4">
+      <address>13.67.56.225/32</address>
+      <address>13.67.186.105/32</address>
+      <address>13.67.209.156/32</address>
+      <address>13.67.214.76/32</address>
+      <address>13.67.222.144/32</address>
+      <address>13.67.234.27/32</address>
+      <address>13.68.31.102/32</address>
+      <address>13.70.89.162/32</address>
+      <address>13.70.156.147/32</address>
+      <address>13.70.159.107/32</address>
+      <address>13.70.185.128/32</address>
+      <address>13.70.189.101/32</address>
+      <address>13.70.189.149/32</address>
+      <address>13.75.42.168/32</address>
+      <address>13.75.125.228/32</address>
+      <address>13.75.154.195/32</address>
+      <address>13.75.159.17/32</address>
+      <address>13.75.159.51/32</address>
+      <address>13.76.188.52/32</address>
+      <address>13.76.189.79/32</address>
+      <address>13.77.5.70/32</address>
+      <address>13.77.7.84/32</address>
+      <address>13.78.93.8/32</address>
+      <address>13.78.94.7/32</address>
+      <address>13.78.95.252/32</address>
+      <address>13.78.112.190/32</address>
+      <address>13.88.183.247/32</address>
+      <address>13.89.44.84/32</address>
+      <address>13.91.40.251/32</address>
+      <address>13.91.108.91/32</address>
+      <address>13.91.252.242/32</address>
+      <address>13.93.209.18/32</address>
+      <address>13.94.47.37/32</address>
+      <address>13.95.88.228/32</address>
+      <address>13.95.236.192/32</address>
+      <address>13.107.3.0/24</address>
+      <address>13.107.64.0/18</address>
+      <address>13.107.8.0/24</address>
+      <address>23.97.78.16/32</address>
+      <address>23.97.169.134/32</address>
+      <address>23.99.101.49/32</address>
+      <address>23.99.115.104/32</address>
+      <address>23.99.121.255/32</address>
+      <address>23.99.122.87/32</address>
+      <address>23.99.124.9/32</address>
+      <address>23.99.213.58/32</address>
+      <address>23.101.115.193/32</address>
+      <address>23.101.116.26/32</address>
+      <address>23.101.156.198/32</address>
+      <address>23.101.158.111/32</address>
+      <address>23.102.17.214/32</address>
+      <address>23.102.24.114/32</address>
+      <address>40.68.229.156/32</address>
+      <address>40.68.230.133/32</address>
+      <address>40.69.45.108/32</address>
+      <address>40.74.62.125/32</address>
+      <address>40.74.113.62/32</address>
+      <address>40.74.129.215/32</address>
+      <address>40.74.130.253/32</address>
+      <address>40.74.143.94/32</address>
+      <address>40.76.77.68/32</address>
+      <address>40.77.16.36/32</address>
+      <address>40.78.68.158/32</address>
+      <address>40.78.71.48/32</address>
+      <address>40.78.98.202/32</address>
+      <address>40.78.145.194/32</address>
+      <address>40.79.38.101/32</address>
+      <address>40.79.74.185/32</address>
+      <address>40.83.17.24/32</address>
+      <address>40.83.176.46/32</address>
+      <address>40.84.28.125/32</address>
+      <address>40.86.90.132/32</address>
+      <address>40.112.151.117/32</address>
+      <address>40.113.87.220/32</address>
+      <address>40.113.136.240/32</address>
+      <address>40.114.149.220/32</address>
+      <address>40.115.1.44/32</address>
+      <address>40.117.100.83/32</address>
+      <address>40.117.145.132/32</address>
+      <address>40.118.6.5/32</address>
+      <address>40.118.214.164/32</address>
+      <address>40.118.244.106/32</address>
+      <address>40.122.165.60/32</address>
+      <address>40.122.168.86/32</address>
+      <address>40.123.50.17/32</address>
+      <address>40.127.97.30/32</address>
+      <address>40.127.129.109/32</address>
+      <address>52.112.0.0/14</address>
+      <address>52.163.224.242/32</address>
+      <address>52.163.230.187/32</address>
+      <address>52.163.231.50/32</address>
+      <address>52.163.231.126/32</address>
+      <address>52.164.255.104/32</address>
+      <address>52.165.35.53/32</address>
+      <address>52.165.45.77/32</address>
+      <address>52.169.9.241/32</address>
+      <address>52.169.30.95/32</address>
+      <address>52.169.104.89/32</address>
+      <address>52.169.105.194/32</address>
+      <address>52.169.105.219/32</address>
+      <address>52.169.106.115/32</address>
+      <address>52.174.144.192/32</address>
+      <address>52.174.166.73/32</address>
+      <address>52.174.166.107/32</address>
+      <address>52.174.166.156/32</address>
+      <address>52.174.186.47/32</address>
+      <address>52.175.38.240/32</address>
+      <address>52.178.34.159/32</address>
+      <address>52.178.36.12/32</address>
+      <address>52.178.36.169/32</address>
+      <address>52.178.38.115/32</address>
+      <address>52.178.145.227/32</address>
+      <address>52.178.148.1/32</address>
+      <address>52.178.148.152/32</address>
+      <address>52.178.158.225/32</address>
+      <address>52.178.179.194/32</address>
+      <address>104.40.91.215/32</address>
+      <address>104.42.229.230/32</address>
+      <address>104.44.195.0/24</address>
+      <address>104.44.200.0/23</address>
+      <address>104.45.231.95/32</address>
+      <address>104.46.96.162/32</address>
+      <address>104.46.97.194/32</address>
+      <address>104.46.101.116/32</address>
+      <address>104.46.105.95/32</address>
+      <address>104.208.28.54/32</address>
+      <address>104.208.31.113/32</address>
+      <address>104.208.152.137/32</address>
+      <address>104.210.1.218/32</address>
+      <address>111.221.101.75/32</address>
+      <address>137.116.157.126/32</address>
+      <address>137.116.159.19/32</address>
+      <address>137.116.159.228/32</address>
+      <address>137.117.109.221/32</address>
+      <address>168.61.100.177/32</address>
+      <address>168.61.152.29/32</address>
+      <address>168.61.155.249/32</address>
+      <address>168.63.245.120/32</address>
+      <address>207.46.155.141/32</address>
     </addresslist>
   </product>
   <product name="OfficeiPad">
@@ -485,6 +563,119 @@
       <address>foodanddrink.services.appex.bing.com</address>
       <address>en-US.appex-rf.msn.com</address>
       <address>weather.tile.appex.bing.com</address>
+    </addresslist>
+  </product>
+  <product name="OfficeMobile">
+    <addresslist type="URL">
+      <address>office15client.microsoft.com</address>
+      <address>odc.officeapps.live.com</address>
+      <address>go.microsoft.com</address>
+      <address>login.microsoftonline.com</address>
+      <address>odcsm.officeapps.live.com</address>
+      <address>*-my.sharepoint.com</address>
+      <address>ms.tific.com</address>
+      <address>roaming.officeapps.live.com</address>
+      <address>o15.officeredir.microsoft.com</address>
+      <address>office.microsoft.com</address>
+      <address>officeimg.vo.msecnd.net</address>
+      <address>m.webtrends.com</address>
+      <address>d.docs.live.net</address>
+      <address>login.live.com</address>
+      <address>auth.gfx.ms</address>
+      <address>wer.microsoft.com</address>
+      <address>*.appex.bing.com</address>
+      <address>*.appex-rf.msn.com</address>
+      <address>appexsin.stb.s-msn.com</address>
+      <address>*.acompli.net</address>
+      <address>outlook.office365.com</address>
+      <address>sdfpilot.outlook.com</address>
+      <address>graph.windows.net</address>
+      <address>api.office.com</address>
+      <address>secure.aadcdn.microsoftonline-p.com</address>
+      <address>login.windows.net</address>
+      <address>login.windows-ppe.net</address>
+      <address>com.microsoft.office.outlook.dev</address>
+      <address>go.microsoft.com</address>
+      <address>mam.manage.microsoft.com</address>
+      <address>vortex.data.microsoft.com</address>
+      <address>login.microsoftonline.com</address>
+      <address>outlook.office.com</address>
+      <address>login.windows.net</address>
+      <address>login.live.com</address>
+      <address>auth.gfx.ms</address>
+      <address>account.live.com</address>
+      <address>graph.microsoft.com</address>
+      <address>apis.live.net</address>
+      <address>accounts.google.com</address>
+      <address>mail.google.com</address>
+      <address>www.googleapis.com</address>
+      <address>api.login.yahoo.com</address>
+      <address>social.yahooapis.com</address>
+      <address>www.dropbox.com</address>
+      <address>api.dropboxapi.com</address>
+      <address>app.box.com</address>
+      <address>m.facebook.com</address>
+      <address>graph.facebook.com</address>
+      <address>www.evernote.com</address>
+      <address>www.wunderlist.com</address>
+      <address>a.wunderlist.com</address>
+      <address>bit.ly/outlookprivacy</address>
+      <address>www.acompli.com/privacy-policy</address>
+      <address>by.uservoice.com</address>
+      <address>outlook.uservoice.com</address>
+      <address>api.diagnostics.office.com</address>
+      <address>acompli-android-logs.s3.amazonaws.com</address>
+      <address>s3-us-west-2.amazonaws.com</address>
+      <address>mobile.pipe.aria.microsoft.com</address>
+      <address>data.flurry.com</address>
+      <address>app.adjust.com</address>
+      <address>rink.hockeyapp.net</address>
+      <address>sdk.hockeyapp.net</address>
+      <address>acompli.helpshift.com</address>
+      <address>play.google.com</address>
+    </addresslist>
+  </product>
+  <product name="RCA">
+    <addresslist type="IPv4">
+      <address>13.67.59.89/32</address>
+      <address>40.85.91.8/32</address>
+      <address>104.208.36.70/32</address>
+      <address>104.211.54.99/32</address>
+      <address>104.211.54.134/32</address>
+    </addresslist>
+  </product>
+  <product name="OneNote">
+    <addresslist type="IPv4">
+      <address>13.73.106.160/32</address>
+      <address>13.75.158.234/32</address>
+      <address>13.78.58.132/32</address>
+      <address>13.79.161.29/32</address>
+      <address>13.82.54.72/32</address>
+      <address>13.93.219.105/32</address>
+      <address>40.74.129.10/32</address>
+      <address>40.118.97.54/32</address>
+      <address>51.140.50.132/32</address>
+      <address>51.141.14.78/32</address>
+      <address>52.172.158.178/32</address>
+      <address>52.228.32.190/32</address>
+      <address>52.229.125.229/32</address>
+      <address>104.41.35.170/32</address>
+      <address>104.211.163.139/32</address>
+    </addresslist>
+    <addresslist type="URL">
+      <address>*.onenote.com</address>
+      <address>*.msecnd.net</address>
+      <address>*.microsoft.com</address>
+      <address>*.office.net</address>
+      <address>apis.live.net</address>
+      <address>www.onedrive.com</address>
+      <address>www.onenote.com</address>
+      <address>Cdn.optimizely.com</address>
+      <address>Ajax.aspnetcdn.com</address>
+      <address>s.ytimg.com</address>
+      <address>www.youtube.com</address>
+      <address>ad.atdmt.com</address>
+      <address>Cdn.onenote.net</address>
     </addresslist>
   </product>
   <product name="EXO">
@@ -585,6 +776,7 @@
       <address>*.search.production.emea.trafficmanager.net</address>
       <address>*.search.production.apac.trafficmanager.net</address>
       <address>accounts.accesscontrol.windows.net</address>
+      <address>admin.onedrive.com</address>
       <address>cdn.sharepointonline.com</address>
       <address>click.email.microsoftonline.com</address>
       <address>login.microsoftonline.com</address>
@@ -710,6 +902,12 @@
       <address>2a01:111:f406:2401::/64</address>
       <address>2a01:111:f406:402::/64</address>
       <address>2a01:111:f406:403::/64</address>
+      <address>2603:1027::/48</address>
+      <address>2603:1037::/48</address>
+      <address>2603:1047::/48</address>
+      <address>2603:1057::/48</address>
+      <address>2a01:111:202f::/48</address>
+      <address>2620:1ec:40::/42</address>
     </addresslist>
     <addresslist type="IPv4">
       <address>13.67.56.225/32</address>
@@ -719,11 +917,11 @@
       <address>13.67.222.144/32</address>
       <address>13.67.234.27/32</address>
       <address>13.68.31.102/32</address>
-      <address>13.68.218.89/32</address>
       <address>13.70.89.162/32</address>
       <address>13.70.156.147/32</address>
       <address>13.70.159.107/32</address>
       <address>13.70.185.128/32</address>
+      <address>13.70.186.54/32</address>
       <address>13.70.189.101/32</address>
       <address>13.70.189.149/32</address>
       <address>13.73.109.13/32</address>
@@ -735,8 +933,10 @@
       <address>13.75.159.51/32</address>
       <address>13.76.188.52/32</address>
       <address>13.76.189.79/32</address>
+      <address>13.77.1.253/32</address>
       <address>13.77.5.70/32</address>
       <address>13.77.7.84/32</address>
+      <address>13.78.59.246/32</address>
       <address>13.78.93.8/32</address>
       <address>13.78.94.7/32</address>
       <address>13.78.95.252/32</address>
@@ -749,8 +949,8 @@
       <address>13.91.252.242/32</address>
       <address>13.92.80.132/32</address>
       <address>13.92.136.118/32</address>
+      <address>13.93.167.93/32</address>
       <address>13.93.209.18/32</address>
-      <address>13.93.226.103/32</address>
       <address>13.94.47.37/32</address>
       <address>13.95.88.228/32</address>
       <address>13.95.233.176/32</address>
@@ -784,7 +984,10 @@
       <address>40.68.230.133/32</address>
       <address>40.69.45.108/32</address>
       <address>40.74.62.125/32</address>
+      <address>40.74.84.253/32</address>
       <address>40.74.113.62/32</address>
+      <address>40.74.127.186/32</address>
+      <address>40.74.128.205/32</address>
       <address>40.74.129.215/32</address>
       <address>40.74.130.253/32</address>
       <address>40.74.143.94/32</address>
@@ -811,17 +1014,26 @@
       <address>40.114.149.220/32</address>
       <address>40.114.244.22/32</address>
       <address>40.115.1.44/32</address>
+      <address>40.115.74.171/32</address>
       <address>40.117.100.83/32</address>
       <address>40.117.145.132/32</address>
       <address>40.118.6.5/32</address>
       <address>40.118.214.164/32</address>
       <address>40.118.244.106/32</address>
       <address>40.118.251.206/32</address>
+      <address>40.121.200.212/32</address>
       <address>40.122.165.60/32</address>
       <address>40.122.168.86/32</address>
       <address>40.123.50.17/32</address>
+      <address>40.126.239.210/32</address>
+      <address>40.126.251.57/32</address>
       <address>40.127.97.30/32</address>
       <address>40.127.129.109/32</address>
+      <address>51.140.53.252/32</address>
+      <address>51.140.55.82/32</address>
+      <address>51.140.183.120/32</address>
+      <address>51.141.5.99/32</address>
+      <address>51.141.9.8/32</address>
       <address>52.112.0.0/14</address>
       <address>52.163.224.242/32</address>
       <address>52.163.230.187/32</address>
@@ -836,6 +1048,9 @@
       <address>52.169.105.194/32</address>
       <address>52.169.105.219/32</address>
       <address>52.169.106.115/32</address>
+      <address>52.172.53.101/32</address>
+      <address>52.172.54.196/32</address>
+      <address>52.172.55.238/32</address>
       <address>52.174.144.192/32</address>
       <address>52.174.166.73/32</address>
       <address>52.174.166.107/32</address>
@@ -851,6 +1066,8 @@
       <address>52.178.148.152/32</address>
       <address>52.178.158.225/32</address>
       <address>52.178.179.194/32</address>
+      <address>52.185.146.154/32</address>
+      <address>52.185.151.102/32</address>
       <address>52.232.129.71/32</address>
       <address>52.232.132.60/32</address>
       <address>52.232.135.81/32</address>
@@ -915,6 +1132,30 @@
       <address>207.46.155.141/32</address>
       <address>207.46.156.136/32</address>
       <address>207.46.230.50/32</address>
+      <address>13.70.156.147/32</address>
+      <address>13.70.159.107/32</address>
+      <address>13.73.109.13/32</address>
+      <address>13.73.155.42/32</address>
+      <address>13.75.125.228/32</address>
+      <address>13.77.7.84/32</address>
+      <address>23.99.213.58/32</address>
+      <address>23.101.115.193/32</address>
+      <address>23.101.116.26/32</address>
+      <address>23.101.156.198/32</address>
+      <address>23.101.158.111/32</address>
+      <address>23.102.17.214/32</address>
+      <address>23.102.24.114/32</address>
+      <address>40.68.229.156/32</address>
+      <address>40.68.230.133/32</address>
+      <address>40.78.145.194/32</address>
+      <address>52.112.0.0/14</address>
+      <address>52.169.9.241/32</address>
+      <address>52.174.186.47/32</address>
+      <address>52.178.179.194/32</address>
+      <address>104.40.91.215/32</address>
+      <address>104.44.200.0/23</address>
+      <address>104.45.231.95/32</address>
+      <address>13.107.64.0/18</address>
     </addresslist>
     <addresslist type="URL">
       <address>*.api.skype.com</address>
@@ -925,13 +1166,15 @@
       <address>*.lync.com</address>
       <address>*.microsoftonline.com</address>
       <address>*.msecnd.net</address>
+      <address>*.sfbassets.com</address>
+      <address>*.skypeforbusiness.com</address>
       <address>*.streaming.mediaservices.windows.net</address>
+      <address>*.urlp.sfbassets.com</address>
       <address>*.users.storage.live.com</address>
       <address>a.config.skype.com</address>
       <address>ajax.aspnetcdn.com</address>
       <address>aka.ms</address>
       <address>amp.azure.net</address>
-      <address>api.skypeforbusiness.com</address>
       <address>b.config.skype.com</address>
       <address>broadcast.skype.com</address>
       <address>browser.pipe.aria.microsoft.com</address>
@@ -957,47 +1200,28 @@
       <address>*.msg.skype.com</address>
       <address>*.pipe.aria.microsoft.com</address>
       <address>*.pipe.skype.com</address>
-      <address>a.config.skype.com</address>
-      <address>amer-client-ss.msg.skype.com</address>
-      <address>amer-server-ss.msg.skype.com</address>
-      <address>apac-client-ss.msg.skype.com</address>
-      <address>apac-server-ss.msg.skype.com</address>
-      <address>api.teams.skype.com</address>
       <address>api.teams.skype.com/amer</address>
       <address>api.teams.skype.com/apac</address>
       <address>api.teams.skype.com/emea</address>
-      <address>b.config.skype.com</address>
-      <address>bots.teams.skype.com</address>
-      <address>ea-api.asm.skype.com</address>
-      <address>emails.teams.skype.com</address>
-      <address>emails.teams.skype.net</address>
-      <address>emea-client-ss.msg.skype.com</address>
-      <address>emea-server-ss.msg.skype.com</address>
-      <address>eu-api.asm.skype.com</address>
-      <address>img.teams.skype.com</address>
       <address>img.teams.skype.com/amer</address>
       <address>img.teams.skype.com/apac</address>
       <address>img.teams.skype.com/emea</address>
-      <address>meetings-cdn.skypeforbusiness.com</address>
       <address>mlccdnprod.azureedge.net</address>
-      <address>mobile.pipe.aria.microsoft.com</address>
       <address>prod.registrar.skype.com</address>
       <address>prod.tpc.skype.com</address>
       <address>s-0001.s-msedge.net</address>
-      <address>s-0002.s-msedge.net</address>
       <address>s-0004.s-msedge.net</address>
-      <address>scheduler.teams.microsoft.com</address>
       <address>scsquery-ss-asia.trafficmanager.net</address>
       <address>scsquery-ss-eu.trafficmanager.net</address>
       <address>scsquery-ss-us.trafficmanager.net</address>
-      <address>settings.teams.skype.com</address>
-      <address>ssdesktopbuild.blob.core.windows.net</address>
-      <address>statics.teams.microsoft.com</address>
-      <address>statics.teams.skype.com</address>
       <address>teams.microsoft.com</address>
-      <address>teams.skype.com</address>
-      <address>us-api.asm.skype.com</address>
-      <address>webhook.teams.skype.com</address>
+      <address>*.teams.skype.com</address>
+      <address>*.teams.microsoft.com</address>
+      <address>*.sfbassets.com</address>
+      <address>*.skypeforbusiness.com</address>
+      <address>*.pipe.aria.microsoft.com</address>
+      <address>*.asm.skype.com</address>
+      <address>*.msg.skype.com</address>
     </addresslist>
   </product>
   <product name="Identity">
@@ -1119,9 +1343,24 @@
       <address>2a01:111:f102:8001::1761:4f8d</address>
       <address>2a01:111:f102:8001::1761:4fc0</address>
       <address>2a01:111:f400::/48</address>
+      <address>2001:df0:d9:200::/64</address>
+      <address>2603:1047:100::/64</address>
+      <address>2a01:111:2035:8::/64</address>
+      <address>2a01:111:200a:a::/64</address>
+      <address>2a01:111:f406:1::/64</address>
+      <address>2a01:111:f406:2::/64</address>
+      <address>2a01:111:f406:1004::/64</address>
+      <address>2a01:111:f406:1805::/64</address>
+      <address>2a01:111:f406:3404::/64</address>
+      <address>2A01:111:F406:8000::/64</address>
+      <address>2a01:111:f406:8801::/64</address>
+      <address>2a01:111:f406:a003::/64</address>
+      <address>2A01:111:F406:C00::/64</address>
     </addresslist>
     <addresslist type="IPv4">
       <address>13.67.50.224/29</address>
+      <address>13.71.201.64/26</address>
+      <address>13.106.4.128/25</address>
       <address>13.75.48.16/29</address>
       <address>13.75.80.16/29</address>
       <address>13.106.56.0/25</address>
@@ -1198,11 +1437,15 @@
       <address>104.215.144.64/29</address>
       <address>104.215.184.16/29</address>
       <address>131.253.120.128/32</address>
+      <address>132.245.165.0/25</address>
       <address>134.170.67.0/25</address>
       <address>134.170.172.128/25</address>
       <address>157.55.45.128/25</address>
       <address>157.55.59.128/25</address>
       <address>157.55.130.0/25</address>
+      <address>157.55.145.0/25</address>
+      <address>157.55.155.0/25</address>
+      <address>157.55.227.192/26</address>
       <address>157.56.53.128/25</address>
       <address>157.56.55.0/25</address>
       <address>157.56.58.0/25</address>
@@ -1442,6 +1685,7 @@
       <address>rink.hockeyapp.net</address>
       <address>sdk.hockeyapp.net</address>
       <address>secure.aadcdn.microsoftonline-p.com</address>
+      <address>securescore.office.com</address>
       <address>signup.microsoft.com</address>
       <address>Suite.office.net</address>
       <address>support.content.office.net</address>
@@ -1532,6 +1776,8 @@
       <address>2603:1030:a02::5f9</address>
       <address>2603:1040:200::419</address>
       <address>2603:1020:201::142</address>
+      <address>2603:1020:300::33</address>
+      <address>2603:1020:400::26</address>
       <address>2603:1040:400::715</address>
       <address>2603:1040:601::281</address>
     </addresslist>
@@ -1551,16 +1797,17 @@
       <address>13.84.216.209/32</address>
       <address>13.84.219.100/32</address>
       <address>13.84.222.249/32</address>
+      <address>13.87.36.128/32</address>
       <address>13.88.17.54/32</address>
       <address>13.91.98.185/32</address>
       <address>13.92.181.66/32</address>
       <address>13.92.236.241/32</address>
       <address>13.93.164.45/32</address>
+      <address>13.93.216.68/32</address>
       <address>13.107.6.156/31</address>
       <address>13.107.7.190/31</address>
       <address>13.107.9.156/31</address>
       <address>23.96.32.105/32</address>
-      <address>23.96.240.104/32</address>
       <address>23.96.251.50/32</address>
       <address>23.96.253.65/32</address>
       <address>23.97.61.137/32</address>
@@ -1578,7 +1825,6 @@
       <address>23.101.14.229/32</address>
       <address>23.101.30.126/32</address>
       <address>23.102.4.253/32</address>
-      <address>23.102.155.140/32</address>
       <address>40.71.88.196/32</address>
       <address>40.76.1.176/32</address>
       <address>40.76.8.142/32</address>
@@ -1587,7 +1833,6 @@
       <address>40.83.120.174/32</address>
       <address>40.83.185.155/32</address>
       <address>40.83.185.230/32</address>
-      <address>40.83.189.49/32</address>
       <address>40.84.145.72/32</address>
       <address>40.113.8.255/32</address>
       <address>40.113.10.78/32</address>
@@ -1598,10 +1843,12 @@
       <address>40.117.151.29/32</address>
       <address>40.117.229.133/32</address>
       <address>40.117.229.194/32</address>
+      <address>40.118.211.172/32</address>
       <address>40.121.144.182/32</address>
       <address>40.122.168.103/32</address>
       <address>51.140.45.81/32</address>
       <address>51.140.226.217/32</address>
+      <address>51.142.213.184/32</address>
       <address>52.163.58.153/32</address>
       <address>52.163.93.38/32</address>
       <address>52.172.49.206/32</address>
@@ -1617,12 +1864,10 @@
       <address>52.228.36.141/32</address>
       <address>52.232.118.68/32</address>
       <address>52.232.129.232/32</address>
-      <address>65.52.26.28/32</address>
       <address>65.52.148.27/32</address>
       <address>65.52.160.218/32</address>
       <address>65.52.184.75/32</address>
       <address>65.52.196.64/32</address>
-      <address>65.52.219.207/32</address>
       <address>65.52.240.200/32</address>
       <address>65.55.239.168/32</address>
       <address>70.37.97.234/32</address>
@@ -1636,19 +1881,12 @@
       <address>104.42.231.28/32</address>
       <address>104.43.140.223/32</address>
       <address>104.45.11.195/32</address>
-      <address>104.45.214.112/32</address>
       <address>104.45.225.7/32</address>
-      <address>104.46.1.211/32</address>
       <address>104.46.38.64/32</address>
       <address>104.46.50.125/32</address>
       <address>104.47.156.62/32</address>
       <address>104.209.35.177/32</address>
-      <address>104.209.190.8/32</address>
-      <address>104.210.4.77/32</address>
-      <address>104.210.40.87/32</address>
-      <address>104.210.212.243/32</address>
       <address>104.211.160.244/32</address>
-      <address>104.214.35.244/32</address>
       <address>104.214.144.62/32</address>
       <address>104.214.144.252/32</address>
       <address>104.214.145.173/32</address>
@@ -1687,11 +1925,8 @@
       <address>168.63.172.54/32</address>
       <address>168.63.213.238/32</address>
       <address>191.235.95.142/32</address>
-      <address>191.236.88.160/32</address>
-      <address>191.236.155.80/32</address>
       <address>191.237.218.239/32</address>
       <address>191.238.160.173</address>
-      <address>191.238.177.236/32</address>
       <address>207.46.73.250/32</address>
       <address>207.46.134.255/32</address>
       <address>207.46.141.38/32</address>
@@ -1705,12 +1940,16 @@
     <addresslist type="IPv4">
       <address>23.103.132.0/22</address>
       <address>23.103.136.0/21</address>
+      <address>23.103.144.0/20</address>
       <address>23.103.156.0/22</address>
       <address>23.103.198.0/24</address>
       <address>23.103.200.0/22</address>
       <address>23.103.212.0/22</address>
       <address>40.92.0.0/14</address>
       <address>40.107.0.0/16</address>
+      <address>40.107.0.0/17</address>
+      <address>40.107.128.0/18</address>
+      <address>52.100.0.0/14</address>
       <address>65.55.88.0/24</address>
       <address>65.55.169.0/24</address>
       <address>94.245.120.64/26</address>

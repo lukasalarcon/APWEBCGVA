@@ -9,6 +9,8 @@ import time
 from urllib2 import Request, urlopen, URLError, HTTPError
 from xml.dom.minidom import parse
 import xml.dom.minidom
+import sys
+
 try:
 	import xml.etree.cElementTree as ET
 except ImportError:
@@ -126,16 +128,24 @@ class O365:
 			return IPv4		
 
 		def AppendFile(self,theFile,theText):
-			print "Append FIle...!"
+			#print "Append FIle...!"
                         try:
-				print theFile
+				#print theFile
 			 	fo = open(theFile, "a")
 
 			except ExceptionI: 
 				print "Failed to Open File"
-				print self.theText
-                        fo.write(theText)
-                        fo.close()
+				return 0
+
+			try:
+                        	fo.write(theText)
+                        	fo.close()
+			except ExceptionI:
+				print "Failed to Write File!"
+				return 0
+			
+			return 1
+
 
 
 		def CreateUserAgentO365(self,XML):
@@ -148,12 +158,36 @@ class O365:
 			self.theText = "#:.START\n"	
 			self.theText = self.theText + "#:." + time.asctime( time.localtime(time.time()) ) +"\n"
 			for elem in IPv4:
-				self.myline = 'dest_domain=. user_agent="' + IPv4[i] +'" action=allow\n'
+				self.myline = 'dest_ip=. user_agent="' + IPv4[i] +'" action=allow\n'
                         	self.theText = self.theText + self.myline
 				i = i + 1
 			#print self.theText
 			self.theText = self.theText + "#:.END\n" 
-                       	self.AppendFile(os.getcwd() + '/' + "filter-default.config.tw",self.theText)
+			
+			return self.theText
+	
+			
+
+
+		def TransactOperateO365(self,XML,ConfigFile):
+
+			self.FilterConfig = ""	
+	
+			if self.GetXMLFile():
+				print "Got File!. Keep on Working!"
+			else:
+				print "Couldn't get the Microsoft File. Aborting Operation"
+
+			self.FilterConfig = self.CreateUserAgentO365(XML)
+			
+			if not self.AppendFile(os.getcwd() + '/' + ConfigFile,self.theText):
+					return 0
+
+			if not self.DeleteOldLines():
+					return 0
+
+
+			return 1
 
 		def GetXMLFile(self):
 		
@@ -163,10 +197,9 @@ class O365:
 
 			#Wait for Success in Reading XML
 			self.ret = self.ReadXML(self.URL)		
-			if self.ret == 1:
-				self.CreateUserAgentO365(self.lcFileName)			
-			else:
-				print "Couldn't get the Microsoft File. Aborting Operation"
+
+			return self.ret
+
 
 		def DeleteOldLines(self,ConfigFile):
 			self.del_line = 0	
@@ -176,14 +209,16 @@ class O365:
 			
 			self.PrintFile("Reading Old Config File:" + ConfigFile)	
 			
-			with open(ConfigFile,"r") as textobj:
-				self.list = list(textobj)
-				#print self.list
-
+			try:
+				with open(ConfigFile,"r") as textobj:
+					self.list = list(textobj)
+					#print self.list
+			except IOFile as e:
+				self.PrintFile("Can't open " + ConfigFile + " " + e.reason)
+				return 0
 
 			for line in self.list:
 				#print line
-				self.start_line = self.start_line + 1
 				if line == "#:.START\n":
 					self.start_line = self.counter
 					self.PrintFile("Detecting START line at:" + str(self.start_line))
@@ -195,17 +230,20 @@ class O365:
 				self.counter = self.counter + 1 
 	
 			while self.start_line < self.end_line:
-				self.PrintFile("Removing line at:" + str(self.start_line))
-				del list[self.start_line - 1]
+				self.PrintFile("Removing line at:" + str(self.start_line) + "while END:" + str(self.end_line) )
+				del self.list[self.start_line - 1]
 				self.start_line = self.start_line + 1
 
-			
-			self.PrintFile("Saving File with excluded lines:" + ConfigFile)
-			with open(ConfigFile,"w") as textobj:
-				for n in self.list:
-					textobj.write(n)			
+			try:
+				self.PrintFile("Saving File with excluded lines:" + ConfigFile)
+				with open(ConfigFile,"w") as textobj:
+					for n in self.list:
+						textobj.write(n)			
+			except IOFile as e:
+				self.PrintFile("Can't close " + ConfigFile + " " + e.reason)
+				return 0
 
-
+			return 1
 
 
 
@@ -255,8 +293,7 @@ class Tweak:
         			        self.CreateUserAgents()	
 				if myinput == "2":
 					print "Generating O365 User-Agent Exceptions"
-					O365t.DeleteOldLines("filter-default.config.tw")
-					O365t.GetXMLFile()
+					O365t.TransactOperateO365("o365.xml","filter-default.config.tw")
     				if myinput == "3":
         				print "Modifying Performance Values"
         			        self.Perfo()	
@@ -327,7 +364,7 @@ class Tweak:
 				print ("Modifying TimeOut Values\n")
 				os.system("/opt/WCG/bin/./content_line -s proxy.config.http.connect_attempts_timeout -v 60")
 			else:
-				print("WCG Binaries not found\n")	
+			 	print("WCG Binaries not found\n")	
 			
 
 		def replace_all(self, text, dic):
@@ -390,6 +427,18 @@ O365t = O365("")
 #O365t.SaveFile(val,"o365.xml")
 #oProducts = O365t.ParseO365Names("o365.xml")
 #menu = O365t.CreateMenu(oProducts)
+
+################
+print len(sys.argv)
+
+if len(sys.argv) > 1:
+	print "Found Arguments. Go to Menu\n"
+	print sys.argv[1:]
+
+if sys.argv[1:] == 2:
+	print "Argument" + sys.argv[1:]
+
+################
 
 
 print "Tweak"
