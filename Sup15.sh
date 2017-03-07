@@ -2,7 +2,7 @@
 #set -x
 
 SHOME="/root/scripts"
-WCGINSTALLER=""
+WCGINSTALLER="Web830Setup_Lnx.tar.gz"
 WWSINSTALLER="WebsenseWeb801Setup_Lnx.tar.gz"
 
 change_eth0 ()
@@ -225,7 +225,7 @@ mkdir $wwshome
 echo ""
 echo "Decompressing WWS Installer....wait...."
 echo ""
-tar -xzf $SHOME/installers/WebsenseWeb801Setup_Lnx.tar.gz -C $wwshome
+tar -xzf $SHOME/installers/$WWSINSTALLER -C $wwshome
 cd $wwshome
 
 echo ""
@@ -315,16 +315,16 @@ mkdir $wcghome
 echo ""
 echo "Decompressing WCG Installer"
 echo ""
-tar -xzf $SHOME/installers/WebsenseCG801Setup_Lnx.tar.gz -C $wcghome
+tar -xzf $SHOME/installers/$WCGINSTALLER -C $wcghome
 cd $wcghome
 ./wcg_install.sh
 
 if [ -f /opt/WCG/websense.ini ]
 then
     echo "Installation WCG...OK"
-    cp $SHOME/backups/socks_server.config /opt/WCG/config
-    service ss5 start
-    chkconfig ss5 on
+    #cp $SHOME/backups/socks_server.config /opt/WCG/config
+    #service ss5 start
+    #chkconfig ss5 on
 else
     echo 0 > $SHOME/scripts/.ready.txt
     exit 1		 

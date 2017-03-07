@@ -10,6 +10,7 @@ from urllib2 import Request, urlopen, URLError, HTTPError
 from xml.dom.minidom import parse
 import xml.dom.minidom
 import sys
+import pdb
 
 try:
 	import xml.etree.cElementTree as ET
@@ -155,6 +156,7 @@ class O365:
 			self.myline = ""
 			IPv4 = self.CreateIPv4List(XML)
 			self.i = 0
+			#pdb.set_trace()
 			self.theText = "#:.START\n"	
 			self.theText = self.theText + "#:." + time.asctime( time.localtime(time.time()) ) +"\n"
 			for elem in IPv4:
@@ -178,6 +180,7 @@ class O365:
 				print "Got File!. Keep on Working!"
 			else:
 				print "Couldn't get the Microsoft File. Aborting Operation"
+				return 0
 
 			self.FilterConfig = self.CreateUserAgentO365(XML)
 
@@ -210,6 +213,7 @@ class O365:
 			
 			self.PrintFile("Reading Old Config File:" + ConfigFile)	
 			
+
 			try:
 				with open(ConfigFile,"r") as textobj:
 					self.list = list(textobj)
@@ -217,7 +221,7 @@ class O365:
 			except IOFile as e:
 				self.PrintFile("Can't open " + ConfigFile + " " + e.reason)
 				return 0
-
+			self.PrintFile("Detecting LENGHT Before Removing: " + str(len(self.list)))
 			for line in self.list:
 				#print line
 				if line == "#:.START\n":
@@ -229,18 +233,18 @@ class O365:
 					print "Deleting " + self.list[self.counter]	
 					del self.list[self.counter]
 
-
 				if line == "#:.END\n":
                                        self.end_line = self.counter
 				       self.PrintFile("Detecting END line at: " + str(self.end_line))
 				       break 
+				
 				self.counter = self.counter + 1
 			
-			self.PrintFile("Detecting LENGHT: " + str(len(self.list)))
+			self.PrintFile("Detecting LENGHT After Removing: " + str(len(self.list)))
 
 
 			try:
-
+				pdb.set_trace()		
 				if self.found == 1:
 					self.PrintFile("Saving File with excluded lines:" + ConfigFile)
 					with open(ConfigFile,"w") as WriteFile:
