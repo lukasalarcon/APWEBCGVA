@@ -1,7 +1,10 @@
 #!/bin/bash
 #set -x
 
-SHOME="/home/admin"
+SHOME="/root/APWEBCGVA"
+INSTALLERS="/root/installers"
+WCGINSTALLER="ContentGateway830Setup_Lnx.tar.gz"
+WWSINSTALLER="Web830Setup_Lnx.tar.gz"
 
 change_eth0 ()
 {
@@ -223,7 +226,7 @@ mkdir $wwshome
 echo ""
 echo "Decompressing WWS Installer....wait...."
 echo ""
-tar -xzf $SHOME/installers/WebsenseWeb801Setup_Lnx.tar.gz -C $wwshome
+tar -xzf $INSTALLERS/$WWSINSTALLER -C $wwshome
 cd $wwshome
 
 echo ""
@@ -292,11 +295,14 @@ then
           else
              echo "No Link Interface Detected"
 	     echo "No Luck. Please, activate one NIC and logon again VA to test"
-	     exit		
+		echo "Trying by command"
+		ip a | more | grep ether\link	
+	     		
         fi
 else
 	echo "$file not found.NIC Detection FAILED. Reboot for persistent rules create file"
-	exit
+	echo "Trying by command line!"
+	ip a | more | grep ether\link	
 	#shutdown -r now
 fi
 
@@ -313,18 +319,18 @@ mkdir $wcghome
 echo ""
 echo "Decompressing WCG Installer"
 echo ""
-tar -xzf $SHOME/installers/WebsenseCG801Setup_Lnx.tar.gz -C $wcghome
+tar -xzf $INSTALLERS/$WCGINSTALLER -C $wcghome
 cd $wcghome
 ./wcg_install.sh
 
 if [ -f /opt/WCG/websense.ini ]
 then
     echo "Installation WCG...OK"
-    cp $SHOME/backups/socks_server.config /opt/WCG/config
-    service ss5 start
-    chkconfig ss5 on
+    #cp $SHOME/backups/socks_server.config /opt/WCG/config
+    #service ss5 start
+    #chkconfig ss5 on
 else
-    echo 0 > $SHOME/scripts/.ready.txt
+    echo 0 > $SHOME/.ready.txt
     exit 1		 
 fi
 
@@ -340,7 +346,7 @@ crontab -l > file; echo '30 1 * * 0 /home/admin/scripts/./clean_cache.sh >> /opt
 Patching ()
 {
 
-$SHOME/scripts/./patching.sh
+$SHOME/./patching.sh
 
 }
 
@@ -353,7 +359,7 @@ figlet APWEBCGVA-b3
 echo ""
 
    
-ready=`head -1 $SHOME/scripts/.ready.txt`
+ready=`head -1 $SHOME/.ready.txt`
 
 if [ $ready =  1 ]; then
     
@@ -480,7 +486,7 @@ then
 	rm -fR /opt/WWSInstaller
 	rm -fR /opt/WCGInstaller
 	enter_routes
- 	Patching       
+ 	#Patching       
          
 fi
 }
